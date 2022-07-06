@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <title>Herefordshire Free School Uniform</title>
+        <link rel="icon" href="icon.png">
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        
+        <style>
+            html
+            {
+                scroll-behavior: smooth;
+            }
+
+            #overlay
+            {
+                background-color: #00000082;
+                height: 100%;
+                left: 0;
+                position: fixed;
+                top: 0;
+                visibility: hidden;
+                width: 100%;
+                z-index: 2;
+            }
+
+            #banner
+            {
+                height: 100%;
+                position: fixed;
+                right: 0%;
+                top: 0%;
+                width: 100%;
+            }
+
+            #popup
+            {
+                background-color: #dfd8d8;
+                border-radius: 5px;
+                box-shadow: -5px 5px 5px #d3cdcd;
+                color: #101010;
+                font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                font-size: larger;
+                height: auto;
+                left: 25%;
+                opacity: 0;
+                top: 20%;
+                transition: opacity 250ms;
+                width: 50%;
+                position: fixed;
+                z-index: 2;
+            }
+    
+            #close
+            {
+                border: 1px solid #000000;
+                border-radius: 50%;
+                box-shadow: -2px 2px 2px #000000;
+                font-size: 45px;
+                height: 50px;
+                line-height: 40px;
+                margin: 1%;
+                text-align: center;
+                transition: background-color 250ms;
+                width: 50px;
+            }
+
+            #close:hover
+            {
+                background-color: #bbb6b6;
+            }
+
+            #skipNavigation
+            {
+                background-color: #ffffff;
+                box-shadow: -2px 2px 2px #ffffff;
+                font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                font-size: larger;
+                position: absolute;
+                text-decoration: none;
+                transform: translateY(-38px);
+                transition: 250ms;
+                z-index: 2;
+            }
+
+            #skipNavigation:focus
+            {
+                transform: translateY(0);
+            }
+
+            #background
+            {
+                background-color: #ffffff;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+                color: #101010;
+                font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                font-size: larger;
+                padding: 10px;
+                position: absolute;
+                right: 5%;
+                top: 25%;
+                width: 90%;
+                z-index: 1;
+            }
+    
+            #topNav
+            {
+                background-color: #ffffff;
+                box-shadow: -5px 5px 5px #ffffff;
+                height: auto;
+                position: sticky;
+                text-align: center;
+                top: -1px;
+                width: 100%;
+            }
+    
+            #topNav h1
+            {
+                margin-top: 0%;
+            }
+
+            #topNav.stickied .fa-facebook
+            {
+                border-top-left-radius: 0%;
+                border-top-right-radius: 0%;
+            }
+
+            .fa-facebook
+            {
+                align-items: center;
+                background-color: #1092f3;
+                border: 1px solid #000000;
+                border-radius: 50%;
+                color: #ffffff;
+                display: inline-flex;
+                font-size: 30px;
+                height: 50px;
+                justify-content: center;
+                text-decoration: none;
+                transition: background-color 250ms;
+                vertical-align: top;
+                width: 50px;
+            }
+
+            .fa-facebook:hover
+            {
+                background-color: #026ae3;
+            }
+
+            .navLink
+            {
+                color: #551a8b;
+                display: inline-block;
+            }
+    
+            .navLink:hover
+            {
+                color: #481677;
+                text-decoration: underline;
+            }
+
+            #info
+            {
+                display: flex;
+            }
+
+            #donate, #about
+            {
+                flex-basis: 50vw;
+            }
+
+            #spreadsheet
+            {
+                border: none;
+                height: 100vh;
+                width: 100%;
+            }
+        </style>
+    </head>
+
+    <body>
+        <img id="banner" src="banner.png">
+
+        <div id="overlay">
+            <div id="popup">
+                <div id="close" onclick="closePopup()">&times;</div>
+            </div>
+        </div>
+
+        <a href="#topNav" id="skipNavigation">Skip Navigation</a>
+
+        <div id="background">
+            <div id="topNav">
+                <a href="https://www.facebook.com/Herefordshire-Free-School-Uniform-102197728945746" target="_blank" title="Click to open our Facebook page" class="fa fa-facebook"></a>
+                <a href="https://www.facebook.com/Herefordshire-Free-School-Uniform-102197728945746" target="_blank" title="Click to open our Facebook page"><h1 class="navLink">Herefordshire Free School Uniform</h1></a>
+                <div id="info">
+                    <h1 id="donate" class="navLink" onclick="donate()">Donate</h1>
+                    <h1 id="about" class="navLink" onclick="about()">About</h1>
+                </div>
+            </div>
+
+            <p>
+                Hello and welcome to the Herefordshire Free School Uniform website.<br>
+                <br>
+                On this website, you can view our current stock of our school uniform.<br>
+                If you find what you are looking for, click on the Facebook icon to go to our Facebook page and then message us for collection details.<br>
+                <br>
+                You can sort each row alphabetically by clicking on the headers.<br>
+                You can search for a specific item by typing keywords in the searchbox in the top right.<br>
+                There may be multiple pages of items that you can search through by clicking the "Next" and "Previous" buttons on the bottom right.<br>
+                You can also select how many items you would like to display per page by clicking the dropdown menu on the top left.
+            </p>
+            
+            <iframe id="spreadsheet" src="https://script.google.com/macros/s/AKfycby0DG8UiPRN6wGu8nvZNwG8-8i65fN2-2mjeWmY-is9zTd8MALN6ct5HlDfM7VSmwc-rg/exec" title="A spreadsheet representing our stock"></iframe>
+        </div>
+
+    </body>
+</html>
+
+<script>
+    const observer = new IntersectionObserver(([e]) => e.target.classList.toggle("stickied", e.intersectionRatio < 1), { threshold: [1] });
+    observer.observe(document.querySelector("#topNav"));
+
+    const overlay = document.getElementById("overlay");
+    const popup = document.getElementById("popup");
+
+    function about()
+    {
+        overlay.style.visibility = "visible";
+        popup.style.opacity = "1";
+
+        const paragraph = document.createElement("p");
+        const text = document.createTextNode("Herefordshire Free School Uniform believes that every child deserves to look and feel smart at school and to avoid the negative effects of hardship on their wellbeing and education.");
+        paragraph.appendChild(text);
+        popup.appendChild(paragraph);
+    }
+
+    function donate()
+    {
+        overlay.style.visibility = "visible";
+        popup.style.opacity = "1";
+
+        const paragraph = document.createElement("p");
+        const text = document.createTextNode("Please help us by donating your good quality school uniform. Donating your pre-loved school uniform keeps good clothing out of landfill and recycles uniform to children who need them. Please message our Facebook page directly for drop-off details. Thank you.");
+        paragraph.appendChild(text);
+        popup.appendChild(paragraph);
+    }
+
+    function closePopup()
+    {
+        overlay.style.visibility = "hidden";
+        popup.style.opacity = "0";
+        popup.children[1].remove();
+    }
+</script>
