@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en-US">
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
         <title>Herefordshire Free School Uniform</title>
         <link rel="icon" href="icon.png">
         
@@ -205,12 +207,7 @@
                 Hello and welcome to the Herefordshire Free School Uniform website.<br>
                 <br>
                 On this website, you can view our current stock of our school uniform.<br>
-                If you find what you are looking for, click on the Facebook icon to go to our Facebook page and then message us for collection details.<br>
-                <br>
-                You can sort each row alphabetically by clicking on the headers.<br>
-                You can search for a specific item by typing keywords in the searchbox in the top right.<br>
-                There may be multiple pages of items that you can search through by clicking the "Next" and "Previous" buttons on the bottom right.<br>
-                You can also select how many items you would like to display per page by clicking the dropdown menu on the top left.
+                If you find what you are looking for, click on the messenger icon or go to our Facebook page and then message us for collection details.
             </p>
             
             <iframe id="spreadsheet" src="https://script.google.com/macros/s/AKfycby0DG8UiPRN6wGu8nvZNwG8-8i65fN2-2mjeWmY-is9zTd8MALN6ct5HlDfM7VSmwc-rg/exec" title="A spreadsheet representing our stock"></iframe>
@@ -265,8 +262,10 @@
         popup.style.opacity = "1";
 
         const paragraph = document.createElement("p");
-        const text = document.createTextNode("Herefordshire Free School Uniform believes that every child deserves to look and feel smart at school and to avoid the negative effects of hardship on their wellbeing and education.");
-        paragraph.appendChild(text);
+        paragraph.appendChild(document.createTextNode("Herefordshire Free School Uniform believes that every child deserves to look and feel smart at school and to avoid the negative effects of hardship on their wellbeing and education."));
+        paragraph.appendChild(document.createElement("br"));
+        paragraph.appendChild(document.createElement("br"));
+        paragraph.appendChild(document.createTextNode("Please help us by donating your good-quality school uniform."));
         popup.appendChild(paragraph);
     }
 
@@ -276,8 +275,12 @@
         popup.style.opacity = "1";
 
         const paragraph = document.createElement("p");
-        const text = document.createTextNode("Please help us by donating your good quality school uniform. Donating your pre-loved school uniform keeps good clothing out of landfill and recycles uniform to children who need them. Please message our Facebook page directly for drop-off details. Thank you.");
-        paragraph.appendChild(text);
+        paragraph.appendChild(document.createTextNode("Please help us by donating your good quality school uniform."));
+        paragraph.appendChild(document.createElement("br"));
+        paragraph.appendChild(document.createTextNode("Donating your pre-loved school uniform keeps good clothing out of landfill and recycles uniform to children who need them."));
+        paragraph.appendChild(document.createElement("br"));
+        paragraph.appendChild(document.createElement("br"));
+        paragraph.appendChild(document.createTextNode("Please message our Facebook page directly by clicking the messenger icon for drop-off details. Thank you."));
         popup.appendChild(paragraph);
     }
 
